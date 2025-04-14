@@ -4,11 +4,11 @@ import pandas as pd
 
 import pdfplumber
 
-# put file name to be processed without extension
-file_name = 'order_types'
+# put absolute path to file including file name without extension, i.e. c:\path\file_name
+file_name = r'C:\path\some file'
 
 # build absolute path to .pdf file
-pdf_file = os.path.abspath(f'{file_name}.pdf')
+pdf_file = f'{file_name}.pdf'
 
 # read and process PDF
 try:
@@ -26,5 +26,3 @@ try:
 
 except FileNotFoundError:
     print(f'File with path {pdf_file} was not found')
-
-
